@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monalisa Biswal — Full-Stack &amp; AI Engineer</title>
+  <meta name="description"
+    content="Portfolio of Monalisa Biswal, final-year Computer Engineering student and full-stack developer working across the MERN stack, Python and applied AI.">
+
+  <!-- Favicon — inline "M" monogram, matches the site's mustard/ink theme -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2312100c'/%3E%3Crect x='2' y='2' width='60' height='60' rx='14' fill='none' stroke='%239c6b1e' stroke-width='1.5'/%3E%3Ctext x='32' y='44' font-family='Georgia, Cambria, serif' font-size='30' font-weight='700' fill='%23e3a73b' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+
+  <!-- Open Graph / social share card -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Monalisa Biswal — Full-Stack & AI Engineer">
+  <meta property="og:description"
+    content="Final-year Computer Engineering student and full-stack developer working across the MERN stack, Python and applied AI/ML.">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Monalisa Biswal — Full-Stack & AI Engineer">
+  <meta name="twitter:description"
+    content="Final-year Computer Engineering student and full-stack developer working across the MERN stack, Python and applied AI/ML.">
+  <meta name="twitter:image" content="og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="noise"></div>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <header class="site-nav" id="siteNav">
+    <a class="logo" href="#hero">MB<span>.</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#hero" data-nav>Home</a>
+      <a href="#about" data-nav>About</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#skills" data-nav>Skills</a>
+      <a href="#projects" data-nav>Projects</a>
+      <a href="#achievements" data-nav>Achievements</a>
+      <a href="#certificates" data-nav>Certificates</a>
+      <a href="#content" data-nav>Content</a>
+      <a href="#contact" data-nav>Contact</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Say Hello</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow mono">// final-year cse · vishakhapatnam, india</p>
+        <h1 class="hero-title">
+          <span class="line">Monalisa</span>
+          <span class="line accent">Biswal</span>
+        </h1>
+        <p class="hero-sub">Full-stack developer skilled in the <span class="accent-text">MERN stack</span>, Python and
+          applied <span class="accent-text">AI/ML</span> — building reliable, real-world applications and growing into a
+          full-stack AI engineer.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Work</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+        <div class="hero-links mono">
+          <a href="https://github.com/lisabiswal" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/monalisa-biswall/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://leetcode.com/u/lilisas/" target="_blank" rel="noopener">LeetCode</a>
+          <a href="https://www.instagram.com/lilisa.is/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="hero-portrait">
+        <div class="portrait-slab" data-img-bg="hero"></div>
+        <div class="cgpa-tag mono">CGPA <strong>9.07</strong>/10</div>
+      </div>
+      <div class="scroll-cue mono">scroll<span class="arrow">↓</span></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about reveal">
+      <p class="section-index mono">01 — About</p>
+      <div class="about-grid">
+        <h2>Building software that stays honest about what it doesn't know.</h2>
+        <div class="about-copy">
+          <p>I'm a final-year <strong>B.Tech Computer Science &amp; Engineering</strong> student at Vignan's Institute
+            of Information Technology, Visakhapatnam, currently holding a <strong>9.07/10 CGPA</strong>.</p>
+          <p>My work sits at the intersection of full-stack engineering and applied AI — I like shipping products end to
+            end, from database schema to REST API to the pixels a user actually touches, then layering in NLP, RAG and
+            retrieval systems where they genuinely help.</p>
+          <p>Outside of coursework, I spend time on <strong>competitive programming</strong>, building side projects,
+            and showing up at developer events around Visakhapatnam to stay close to the wider engineering community.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="experience reveal">
+      <p class="section-index mono">02 — Experience</p>
+      <h2>Where I've worked</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-date mono">Feb 2026 — Apr 2026</div>
+          <div class="timeline-body">
+            <h3>Infosys Springboard Virtual Internship 6.0</h3>
+            <p class="role">AI-Powered Stock Screener &amp; Advisory Platform</p>
+            <ul>
+              <li>Built a stock screener with NLP query parsing to filter stocks using financial metrics and live market
+                data.</li>
+              <li>Designed backend modules for screening logic, database management, and REST APIs.</li>
+              <li>Built a data ingestion pipeline fetching stock and news data from external APIs.</li>
+            </ul>
+            <div class="tag-row">
+              <span>Python</span><span>React</span><span>FastAPI</span><span>PostgreSQL</span><span>REST
+                APIs</span><span>SQLAlchemy</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills reveal">
+      <p class="section-index mono">03 — Skills</p>
+      <h2>Flip the cards</h2>
+      <div class="card-grid" id="skillCards">
+
+        <div class="flip-card" tabindex="0" role="button" aria-label="Languages skill card, flip for details">
+          <div class="flip-card-inner">
+            <div class="flip-front">
+              <span class="card-icon">⌨</span>
+              <div>
+                <h3>Languages</h3>
+                <p>3 core languages</p>
+              </div>
+              <span class="card-index mono">01</span>
+            </div>
+            <div class="flip-back">
+              <h4>Languages</h4>
+              <div class="chip-list">
+                <span class="chip">Python</span><span class="chip">C++</span><span class="chip">JavaScript</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0" role="button" aria-label="Frameworks skill card, flip for details">
+          <div class="flip-card-inner">
+            <div class="flip-front">
+              <span class="card-icon">⚙</span>
+              <div>
+                <h3>Frameworks</h3>
+                <p>Full-stack tooling</p>
+              </div>
+              <span class="card-index mono">02</span>
+            </div>
+            <div class="flip-back">
+              <h4>Frameworks</h4>
+              <div class="chip-list">
+                <span class="chip">React.js</span><span class="chip">Express.js</span><span
+                  class="chip">Node.js</span><span class="chip">FastAPI</span><span class="chip">REST API</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0" role="button" aria-label="Databases skill card, flip for details">
+          <div class="flip-card-inner">
+            <div class="flip-front">
+              <span class="card-icon">◈</span>
+              <div>
+                <h3>Databases</h3>
+                <p>Relational &amp; document</p>
+              </div>
+              <span class="card-index mono">03</span>
+            </div>
+            <div class="flip-back">
+              <h4>Databases</h4>
+              <div class="chip-list">
+                <span class="chip">MongoDB</span><span class="chip">MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0" role="button"
+          aria-label="AI and Machine Learning skill card, flip for details">
+          <div class="flip-card-inner">
+            <div class="flip-front">
+              <span class="card-icon">✦</span>
+              <div>
+                <h3>AI / ML</h3>
+                <p>Retrieval &amp; language</p>
+              </div>
+              <span class="card-index mono">04</span>
+            </div>
+            <div class="flip-back">
+              <h4>AI / ML</h4>
+              <div class="chip-list">
+                <span class="chip">NLP</span><span class="chip">RAG</span><span class="chip">FAISS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0" role="button" aria-label="Tools skill card, flip for details">
+          <div class="flip-card-inner">
+            <div class="flip-front">
+              <span class="card-icon">▣</span>
+              <div>
+                <h3>Tools</h3>
+                <p>Daily workflow</p>
+              </div>
+              <span class="card-index mono">05</span>
+            </div>
+            <div class="flip-back">
+              <h4>Tools</h4>
+              <div class="chip-list">
+                <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Vercel</span><span
+                  class="chip">Socket.IO</span><span class="chip">JWT</span><span class="chip">Postman</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects reveal">
+      <p class="section-index mono">04 — Projects</p>
+      <h2>Selected builds</h2>
+      <div class="project-grid">
+
+        <a class="project-card" href="https://github.com/lisabiswal" target="_blank" rel="noopener">
+          <div class="project-media"><span class="project-glyph">&lt;/&gt;</span></div>
+          <div class="project-body">
+            <h3>Pairify</h3>
+            <p>A real-time collaborative code editor built with Socket.IO for multi-user editing, CodeMirror syntax
+              highlighting, and a responsive UI.</p>
+            <div class="tag-row">
+              <span>React.js</span><span>SCSS</span><span>Express.js</span><span>Socket.IO</span><span>CodeMirror</span>
+            </div>
+          </div>
+          <span class="project-link mono">View on GitHub →</span>
+        </a>
+
+        <a class="project-card" href="https://github.com/lisabiswal" target="_blank" rel="noopener">
+          <div class="project-media"><span class="project-glyph">RAG</span></div>
+          <div class="project-body">
+            <h3>ExamGenius</h3>
+            <p>A full-stack AI app that generates exam questions from syllabus PDFs using a RAG pipeline with FLAN-T5,
+              FAISS vector search and Sentence-BERT embeddings. JWT auth, PDF/Word export, analytics dashboard — all AI
+              inference runs locally at zero cost.</p>
+            <div class="tag-row">
+              <span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Python</span><span>FastAPI</span><span>FLAN-T5</span><span>FAISS</span>
+            </div>
+          </div>
+          <span class="project-link mono">View on GitHub →</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="achievements reveal">
+      <p class="section-index mono">05 — Achievements</p>
+      <div class="achieve-grid">
+        <div class="achieve-photo" data-img-bg="award"></div>
+        <div class="achieve-copy">
+          <h2>Recognition along the way</h2>
+          <ul class="achieve-list">
+            <li><strong>Rank 1</strong> — 30-Day DSA Challenge by AlgoZenith</li>
+            <li><strong>9.07 / 10</strong> CGPA in B.Tech Computer Science &amp; Engineering</li>
+            <li>Co-authored a research paper on clinical report generation with reduced hallucination</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="certificates reveal">
+      <p class="section-index mono">06 — Certificates</p>
+      <h2>Courses &amp; certifications</h2>
+      <div class="cert-grid">
+
+        <div class="cert-card">
+          <div class="cert-media" data-img-bg="cert_python"></div>
+          <div class="cert-body">
+            <h3>Python Fundamentals</h3>
+            <p>Infosys Springboard</p>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-media" data-img-bg="cert_genai"></div>
+          <div class="cert-body">
+            <h3>GenAI for Professionals: 10x Your Productivity</h3>
+            <p>Udemy</p>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-media" data-img-bg="cert_tcs"></div>
+          <div class="cert-body">
+            <h3>TCS iON Career Edge — Young Professional</h3>
+            <p>TCS iON</p>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-media" data-img-bg="cert_git"></div>
+          <div class="cert-body">
+            <h3>Git — Skill Up</h3>
+            <p>GeeksforGeeks</p>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-media" data-img-bg="cert_tcs_ai"></div>
+          <div class="cert-body">
+            <h3>TCS iON Career Edge — AI Foundation</h3>
+            <p>TCS iON</p>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-media" data-img-bg="cert_networking"></div>
+          <div class="cert-body">
+            <h3>IT Networking Fundamentals For Complete Beginners</h3>
+            <p>Udemy</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTENT CREATION -->
+    <section id="content" class="content-reels reveal">
+      <p class="section-index mono">07 — Content</p>
+      <h2>Explaining tech, one reel at a time</h2>
+      <p class="content-intro">Alongside building, I script and post short-form reels on Instagram breaking down
+        technical concepts — networking, AI, protocols — in plain, accessible language for people who find tech
+        intimidating.</p>
+      <div class="reel-grid">
+
+        <a class="reel-card" href="https://www.instagram.com/reel/Da5QaKNNDH-/" target="_blank" rel="noopener">
+          <div class="reel-media"><span class="reel-glyph">◇</span></div>
+          <div class="reel-body">
+            <h3>CIDR Notation &amp; IPv4 vs IPv6</h3>
+            <p>Breaking down IP addressing basics in Hinglish for a non-networking audience.</p>
+            <span class="reel-tag mono">Hinglish</span>
+          </div>
+        </a>
+
+        <a class="reel-card" href="https://www.instagram.com/reel/DbQ54zjtyKv/" target="_blank" rel="noopener">
+          <div class="reel-media"><span class="reel-glyph">⌘</span></div>
+          <div class="reel-body">
+            <h3>MCP — Model Context Protocol</h3>
+            <p>What MCP actually does and why it matters for how AI tools connect to data.</p>
+            <span class="reel-tag mono">English</span>
+          </div>
+        </a>
+
+        <a class="reel-card" href="https://www.instagram.com/reel/DbinLHDtiHf/" target="_blank" rel="noopener">
+          <div class="reel-media"><span class="reel-glyph">▤</span></div>
+          <div class="reel-body">
+            <h3>RAG</h3>
+            <p>Using the "student opens a book mid-exam" analogy to break down what Retrieve, Augment, and Generate
+              actually mean.</p>
+            <span class="reel-tag mono">English</span>
+          </div>
+        </a>
+
+      </div>
+      <a href="https://www.instagram.com/lilisa.is/" target="_blank" rel="noopener" class="reel-more mono">See more on
+        Instagram →</a>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact reveal">
+      <p class="section-index mono">08 — Contact</p>
+      <h2>Have a project or role in mind? Send a mail.</h2>
+      <div class="contact-grid">
+        <form class="contact-form" id="contactForm">
+          <label>Name
+            <input type="text" name="name" required placeholder="Your name">
+          </label>
+          <label>Email
+            <input type="email" name="email" required placeholder="you@example.com">
+          </label>
+          <label>Message
+            <textarea name="message" rows="5" required
+              placeholder="Tell me a bit about what you have in mind..."></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p class="form-note mono" id="formNote"></p>
+        </form>
+        <div class="contact-side">
+          <a href="mailto:monalisaabiswall@gmail.com">monalisaabiswall<br>@gmail.com</a>
+          <p>Vishakhapatnam, Andhra Pradesh, India</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS CAROUSEL — last section -->
+    <section id="events" class="events reveal">
+      <p class="section-index mono">09 — Events</p>
+      <h2>Out in the field</h2>
+      <div class="carousel">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-slide">
+            <div class="slide-img" data-img-bg="nss1"></div>
+            <div class="slide-caption">
+              <h4>NSS Activity</h4>
+              <p>Teaching session</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-img" data-img-bg="nss2"></div>
+            <div class="slide-caption">
+              <h4>NSS Activity</h4>
+              <p>Teaching session</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-img" data-img-bg="event1"></div>
+            <div class="slide-caption">
+              <h4>ServiceNow AI Skills Summit</h4>
+              <p>Visakhapatnam</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-img" data-img-bg="event4"></div>
+            <div class="slide-caption">
+              <h4>ServiceNow University Session</h4>
+              <p>Visakhapatnam</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-img" data-img-bg="event2"></div>
+            <div class="slide-caption">
+              <h4>Google Developer Groups — DevFest</h4>
+              <p>Vizag, 2025</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-img" data-img-bg="event3"></div>
+            <div class="slide-caption">
+              <h4>DevFest Vizag — Main Stage</h4>
+              <p>GITAM, Visakhapatnam</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn prev" id="carouselPrev" aria-label="Previous slide">‹</button>
+        <button class="carousel-btn next" id="carouselNext" aria-label="Next slide">›</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">Monalisa Biswal<span class="accent">.</span></div>
+      <div class="footer-contact mono">
+        <a href="mailto:monalisaabiswall@gmail.com">monalisaabiswall@gmail.com</a>
+        <span>Vishakhapatnam, India</span>
+      </div>
+      <div class="footer-social mono">
+        <a href="https://github.com/lisabiswal" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/monalisa-biswall/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://leetcode.com/u/lilisas/" target="_blank" rel="noopener">LeetCode</a>
+        <a href="https://www.instagram.com/lilisa.is/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom mono">
+      <span>© 2026 Monalisa Biswal. All rights reserved.</span>
+      <span>Designed &amp; built with care.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
