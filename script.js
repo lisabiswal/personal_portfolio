@@ -104,78 +104,193 @@ document.querySelectorAll('.flip-card').forEach(card => {
   });
 });
 
-/* ---- Events carousel ---- */
+/* ---- Events carousel (only present on index.html) ---- */
 const track = document.getElementById('carouselTrack');
-const slides = Array.from(track.children);
-const prevBtn = document.getElementById('carouselPrev');
-const nextBtn = document.getElementById('carouselNext');
-const dotsWrap = document.getElementById('carouselDots');
+if (track) {
+  const slides = Array.from(track.children);
+  const prevBtn = document.getElementById('carouselPrev');
+  const nextBtn = document.getElementById('carouselNext');
+  const dotsWrap = document.getElementById('carouselDots');
 
-let currentSlide = 0;
-let autoplayTimer;
+  let currentSlide = 0;
+  let autoplayTimer;
 
-slides.forEach((_, i) => {
-  const dot = document.createElement('button');
-  dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-  if (i === 0) dot.classList.add('active');
-  dot.addEventListener('click', () => goToSlide(i));
-  dotsWrap.appendChild(dot);
-});
-const dots = Array.from(dotsWrap.children);
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.children);
 
-function slideWidth() {
-  return slides[0].getBoundingClientRect().width + 24; // + gap
-}
+  function slideWidth() {
+    return slides[0].getBoundingClientRect().width + 24; // + gap
+  }
 
-function goToSlide(index) {
-  currentSlide = (index + slides.length) % slides.length;
-  track.scrollTo({ left: currentSlide * slideWidth(), behavior: 'smooth' });
-  dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
-}
-
-prevBtn.addEventListener('click', () => { goToSlide(currentSlide - 1); resetAutoplay(); });
-nextBtn.addEventListener('click', () => { goToSlide(currentSlide + 1); resetAutoplay(); });
-
-function startAutoplay() {
-  autoplayTimer = setInterval(() => goToSlide(currentSlide + 1), 4500);
-}
-function resetAutoplay() {
-  clearInterval(autoplayTimer);
-  startAutoplay();
-}
-const carouselEl = document.querySelector('.carousel');
-carouselEl.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
-carouselEl.addEventListener('mouseleave', startAutoplay);
-startAutoplay();
-
-// keep dots in sync if user manually scrolls/swipes
-let scrollTimeout;
-track.addEventListener('scroll', () => {
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(() => {
-    const idx = Math.round(track.scrollLeft / slideWidth());
-    currentSlide = Math.max(0, Math.min(slides.length - 1, idx));
+  function goToSlide(index) {
+    currentSlide = (index + slides.length) % slides.length;
+    track.scrollTo({ left: currentSlide * slideWidth(), behavior: 'smooth' });
     dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
-  }, 100);
-}, { passive: true });
+  }
 
-/* ---- Contact form: compose a mailto with the visitor's details ---- */
+  prevBtn.addEventListener('click', () => { goToSlide(currentSlide - 1); resetAutoplay(); });
+  nextBtn.addEventListener('click', () => { goToSlide(currentSlide + 1); resetAutoplay(); });
+
+  function startAutoplay() {
+    autoplayTimer = setInterval(() => goToSlide(currentSlide + 1), 4500);
+  }
+  function resetAutoplay() {
+    clearInterval(autoplayTimer);
+    startAutoplay();
+  }
+  const carouselEl = document.querySelector('.carousel');
+  carouselEl.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+  carouselEl.addEventListener('mouseleave', startAutoplay);
+  startAutoplay();
+
+  // keep dots in sync if user manually scrolls/swipes
+  let scrollTimeout;
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      const idx = Math.round(track.scrollLeft / slideWidth());
+      currentSlide = Math.max(0, Math.min(slides.length - 1, idx));
+      dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+    }, 100);
+  }, { passive: true });
+}
+
+/* ---- Contact form: compose a mailto with the visitor's details (only present on index.html) ---- */
 const contactForm = document.getElementById('contactForm');
-const formNote = document.getElementById('formNote');
-const DEST_EMAIL = 'monalisaabiswall@gmail.com';
+if (contactForm) {
+  const formNote = document.getElementById('formNote');
+  const DEST_EMAIL = 'monalisaabiswall@gmail.com';
 
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const data = new FormData(contactForm);
-  const name = data.get('name').trim();
-  const email = data.get('email').trim();
-  const message = data.get('message').trim();
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(contactForm);
+    const name = data.get('name').trim();
+    const email = data.get('email').trim();
+    const message = data.get('message').trim();
 
-  const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
-  const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-  const mailtoLink = `mailto:${DEST_EMAIL}?subject=${subject}&body=${body}`;
+    const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
+    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    const mailtoLink = `mailto:${DEST_EMAIL}?subject=${subject}&body=${body}`;
 
-  window.location.href = mailtoLink;
-  formNote.textContent = 'Opening your email app to send this message…';
-  setTimeout(() => { formNote.textContent = ''; }, 6000);
-});
+    window.location.href = mailtoLink;
+    formNote.textContent = 'Opening your email app to send this message…';
+    setTimeout(() => { formNote.textContent = ''; }, 6000);
+  });
+}
+/* ===========================================================
+   Blog — posts live in this array. To add a new post, append
+   a new object here (title, date, tag, readTime, excerpt, and
+   content as an HTML string using <p>, <h3>, <ul>, <strong> etc).
+   Nothing else needs to change — the grid and modal render
+   automatically from this list. Newest post should go first.
+=========================================================== */
+const BLOG_POSTS = [
+  {
+    title: "RAG, Actually Explained: Chunking, Embeddings &amp; Vector Databases",
+    date: "Aug 2026",
+    tag: "AI/ML",
+    readTime: "6 min read",
+    excerpt: "What really happens between 'the AI looks something up' and 'the AI answers' — chunking, embeddings, and vector search, without the jargon.",
+    content: `
+      <p>If you've used an AI tool that somehow "knows" about a document you just uploaded, or answers questions about news from last week, you've already seen <strong>RAG</strong> — Retrieval-Augmented Generation — at work. The name sounds intimidating. The idea isn't.</p>
+
+      <p>Think of a language model as a student walking into an exam. Left alone, it answers purely from memory — whatever it learned during training, frozen at a point in time. RAG is what happens when you let that student open a book <em>during</em> the exam. Suddenly it's not guessing anymore — it's checking facts first, then answering. That's the whole point of RAG: find it, add it, then answer.</p>
+
+      <p>The "find it" part is where most of the interesting engineering happens, and it comes down to three pieces working together: <strong>chunking</strong>, <strong>embeddings</strong>, and a <strong>vector database</strong>. Here's what each one actually does.</p>
+
+      <h3>Step 1: Chunking — cutting the book into pages</h3>
+      <p>You can't hand an AI an entire 300-page PDF and ask it to "check the book" — there's a limit to how much text it can look at in one go, and even if there wasn't, dumping the whole document in would bury the one relevant paragraph under 299 irrelevant ones.</p>
+      <p>So the first step is <strong>chunking</strong>: splitting a document into smaller, manageable pieces — usually a few hundred words each, sometimes overlapping slightly at the edges so a sentence that spans two chunks doesn't lose its meaning. This is closer to tearing a book into individual pages than shredding it randomly — the goal is to keep each chunk coherent enough to make sense on its own.</p>
+      <p>Get chunking wrong and everything downstream suffers: chunks that are too big drag in noise, chunks that are too small lose context. It's a genuinely underrated step — most of the "why is my RAG app giving weird answers" debugging ends up here.</p>
+
+      <h3>Step 2: Embeddings — turning meaning into numbers</h3>
+      <p>Now you have hundreds of little text chunks. How does a computer figure out which ones are actually relevant to a question? It can't "read" the way we do — so instead, every chunk gets converted into an <strong>embedding</strong>: a long list of numbers (a vector) that represents its meaning in a mathematical space.</p>
+      <p>Here's the part that makes it click: chunks with similar meaning end up with similar numbers, even if they don't share a single word. "The stock market fell sharply" and "shares saw a steep decline" would land close together in this space, because an embedding model captures meaning, not just keywords. This is why RAG can answer things a plain keyword search would miss.</p>
+      <p>The question you type gets embedded the exact same way — turned into its own vector — so it can be compared against every chunk's vector using simple math (usually cosine similarity, which is really just "how close are these two directions").</p>
+
+      <h3>Step 3: Vector databases — a search engine for meaning</h3>
+      <p>Once you've embedded thousands (or millions) of chunks, you need somewhere to store all those vectors and search through them fast. That's a <strong>vector database</strong> — built specifically to answer one question extremely quickly: "given this vector, which stored vectors are closest to it?"</p>
+      <p>Tools like <code>FAISS</code>, Pinecone, and Weaviate exist because comparing a query against millions of vectors one by one would be painfully slow. These databases use clever indexing structures to narrow the search down almost instantly, returning the top few most relevant chunks instead of making you scan everything.</p>
+
+      <h3>Putting it together: the RAG pipeline</h3>
+      <p>Line all three up and the whole system looks like this:</p>
+      <ul>
+        <li><strong>Retrieve</strong> — your question gets embedded, the vector database finds the most relevant chunks</li>
+        <li><strong>Augment</strong> — those chunks get added to the prompt, right alongside your original question</li>
+        <li><strong>Generate</strong> — the language model writes its answer using those retrieved chunks as grounding, instead of relying purely on memory</li>
+      </ul>
+      <p>Same underlying model, same brain — just backed by facts it looked up a moment ago instead of facts it half-remembers from training.</p>
+
+      <h3>Where I've actually used this</h3>
+      <p>This isn't just theory for me — it's the backbone of <strong>ExamGenius</strong>, a project where I built a pipeline that chunks syllabus PDFs, embeds them with Sentence-BERT, indexes them in FAISS, and uses FLAN-T5 to generate exam questions grounded in the retrieved content. Watching chunk size actually change answer quality in a real app is what made all three of these pieces click for me — theory is one thing, but debugging why your retrieved chunk didn't actually contain the answer teaches you chunking strategy faster than any article will.</p>
+    `,
+  },
+  // Example shape for the next post you send me:
+  // {
+  //   title: "Post title",
+  //   date: "Aug 2026",
+  //   tag: "AI/ML",
+  //   readTime: "4 min read",
+  //   excerpt: "One or two sentence summary shown on the card.",
+  //   content: `<p>Full post body...</p><h3>A subheading</h3><p>More text...</p>`
+  // },
+];
+
+const blogGrid = document.getElementById('blogGrid');
+if (blogGrid) {
+  renderBlogGrid();
+}
+
+function renderBlogGrid() {
+  if (BLOG_POSTS.length === 0) {
+    blogGrid.innerHTML = `<div class="blog-empty">First post is on its way — check back soon.</div>`;
+    return;
+  }
+  blogGrid.innerHTML = BLOG_POSTS.map((post, i) => `
+    <article class="post-card" data-index="${i}" tabindex="0" role="button" aria-label="Read post: ${post.title}">
+      <span class="post-tag mono">${post.tag}</span>
+      <h3>${post.title}</h3>
+      <p>${post.excerpt}</p>
+      <div class="post-meta mono"><span>${post.date}</span><span>${post.readTime}</span></div>
+    </article>
+  `).join('');
+
+  document.querySelectorAll('.post-card').forEach(card => {
+    const open = () => openPost(BLOG_POSTS[card.dataset.index]);
+    card.addEventListener('click', open);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+  });
+}
+
+const postModal = document.getElementById('postModal');
+if (postModal) {
+  const postModalClose = document.getElementById('postModalClose');
+  const postModalTitle = document.getElementById('postModalTitle');
+  const postModalMeta = document.getElementById('postModalMeta');
+  const postModalBody = document.getElementById('postModalBody');
+
+  window.openPost = function (post) {
+    postModalTitle.textContent = post.title;
+    postModalMeta.textContent = `${post.date} · ${post.readTime}`;
+    postModalBody.innerHTML = post.content;
+    postModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  function closePost() {
+    postModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  postModalClose.addEventListener('click', closePost);
+  postModal.addEventListener('click', (e) => { if (e.target === postModal) closePost(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePost(); });
+}

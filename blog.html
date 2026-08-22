@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Monalisa Biswal</title>
+<meta name="description" content="Writing on full-stack development, applied AI/ML, and things learned building real projects — by Monalisa Biswal.">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2312100c'/%3E%3Crect x='2' y='2' width='60' height='60' rx='14' fill='none' stroke='%239c6b1e' stroke-width='1.5'/%3E%3Ctext x='32' y='44' font-family='Georgia, Cambria, serif' font-size='30' font-weight='700' fill='%23e3a73b' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog — Monalisa Biswal">
+<meta property="og:description" content="Writing on full-stack development, applied AI/ML, and things learned building real projects.">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog — Monalisa Biswal">
+<meta name="twitter:image" content="og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="noise"></div>
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="site-nav" id="siteNav">
+  <a class="logo" href="index.html">MB<span>.</span></a>
+  <nav class="nav-links" id="navLinks">
+    <a href="index.html#about">About</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#achievements">Achievements</a>
+    <a href="index.html#certificates">Certificates</a>
+    <a href="index.html#content">Content</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <a class="nav-cta" href="index.html#contact">Say Hello</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</header>
+
+<main>
+  <section class="blog-hero reveal">
+    <p class="eyebrow mono">// writing</p>
+    <h1>Blog</h1>
+    <p class="blog-intro">Notes on full-stack development, applied AI/ML, and things I learn while building — written the same way I'd explain them to a friend.</p>
+  </section>
+
+  <section class="blog-list reveal">
+    <div class="blog-grid" id="blogGrid">
+      <!-- posts are rendered here by script.js from the BLOG_POSTS array -->
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">Monalisa Biswal<span class="accent">.</span></div>
+    <div class="footer-contact mono">
+      <a href="mailto:monalisaabiswall@gmail.com">monalisaabiswall@gmail.com</a>
+      <span>Vishakhapatnam, India</span>
+    </div>
+    <div class="footer-social mono">
+      <a href="https://github.com/lisabiswal" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/monalisa-biswall/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://leetcode.com/u/lilisas/" target="_blank" rel="noopener">LeetCode</a>
+      <a href="https://www.instagram.com/lilisa.is/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+  <div class="footer-bottom mono">
+    <span>© 2026 Monalisa Biswal. All rights reserved.</span>
+    <span>Designed &amp; built with care.</span>
+  </div>
+</footer>
+
+<!-- Post modal -->
+<div class="post-modal" id="postModal">
+  <div class="post-modal-inner">
+    <button class="post-modal-close" id="postModalClose" aria-label="Close post">×</button>
+    <p class="post-modal-meta mono" id="postModalMeta"></p>
+    <h2 id="postModalTitle"></h2>
+    <div class="post-modal-body" id="postModalBody"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
